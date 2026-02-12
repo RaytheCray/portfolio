@@ -126,6 +126,16 @@ body {
     max-width: 800px;
 }
 
+.hero-name {
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
 .hero-title {
     font-size: 3.5rem;
     font-weight: 800;
@@ -602,6 +612,10 @@ section {
         padding: 1rem 0;
     }
 
+    .hero-name {
+        font-size: 4rem;
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
@@ -638,6 +652,10 @@ section {
 }
 
 @media (max-width: 480px) {
+    .hero-name {
+        font-size: 3rem;
+    }
+
     .hero-title {
         font-size: 2rem;
     }
