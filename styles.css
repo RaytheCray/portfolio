@@ -286,14 +286,17 @@ section {
     background: var(--light-gray);
 }
 
-/* Make grid items stretch to match height and make each card a column flex container */
+/* Skills Section — make all boxes equal height per row */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
-    align-items: stretch; /* ensure grid children stretch vertically */
+
+    /* ensure grid children stretch vertically and each row is equal height */
+    align-items: stretch;
+    grid-auto-rows: 1fr;    /* <-- important: makes each grid row have equal height */
 }
 
 .skill-category {
@@ -302,9 +305,12 @@ section {
     border-radius: 12px;
     box-shadow: 0 4px 6px var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;           /* NEW: make each card a flex column */
-    flex-direction: column;  /* NEW: so content stacks vertically */
-    height: 100%;            /* NEW: allow the card to fill the grid cell */
+
+    /* make each card a vertical flex container and fill the grid cell */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;          /* <-- important: allows children to scroll/clip correctly inside flex */
 }
 
 .skill-category:hover {
