@@ -286,12 +286,14 @@ section {
     background: var(--light-gray);
 }
 
+/* Make grid items stretch to match height and make each card a column flex container */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
+    align-items: stretch; /* ensure grid children stretch vertically */
 }
 
 .skill-category {
@@ -300,6 +302,9 @@ section {
     border-radius: 12px;
     box-shadow: 0 4px 6px var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;           /* NEW: make each card a flex column */
+    flex-direction: column;  /* NEW: so content stacks vertically */
+    height: 100%;            /* NEW: allow the card to fill the grid cell */
 }
 
 .skill-category:hover {
@@ -318,6 +323,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: auto; /* push tags to the bottom if content above is short (keeps layout visually balanced) */
 }
 
 .skill-tag {
